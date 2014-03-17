@@ -9,12 +9,13 @@
             var h = 19; // Hour
             var m = 30; // Minute
 
-            // Count Down Function
             var target_date = new Date(y, M - 1, d, h, m, 0, 0);
+            
+            // Count Down Function
             function countdown() {
                 var now = new Date();
                 var difrence = target_date.getTime() - now.getTime();
-                var difrence_second = difrence / 1000; // difrence between to target date and now in seconds
+                var difrence_second = difrence / 1000; // difrence between two 'target date' and 'now' in seconds
 
                 var seconds = Math.floor(difrence_second % 60); // remaining seconds between 0 to 59
                 var minutes = Math.floor((difrence_second / 60) % 60); // remaining minutes between 0 to 59
