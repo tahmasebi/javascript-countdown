@@ -3,7 +3,7 @@ javascript-countdown
 
 A Simple Count Down By JavaScript
 
-How to Use
+Usage
 ==========
 
 Just set below variables in source code to your target date.
@@ -14,3 +14,8 @@ Just set below variables in source code to your target date.
     var h = 19; // Hour
     var m = 30; // Minute
 </pre>
+
+License
+=======
+
+"javascript countdown" is licensed under the MIT license. (http://opensource.org/licenses/MIT)
