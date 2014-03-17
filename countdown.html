@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title> JavaScript CountDown</title>
+        <script>
+            // Wich Date Its Come UP?
+            var y = 2014; // Year
+            var M = 03; // Month
+            var d = 17; // Day
+            var h = 19; // Hour
+            var m = 30; // Minute
+
+            // Count Down Function
+            var target_date = new Date(y, M - 1, d, h, m, 0, 0);
+            function countdown() {
+                var now = new Date();
+                var difrence = target_date.getTime() - now.getTime();
+                var difrence_second = difrence / 1000;
+
+                var seconds = Math.floor(difrence_second % 60);
+                var minutes = Math.floor((difrence_second / 60) % 60);
+                var hours = Math.floor((difrence_second / (60 * 60)) % 24);
+                var days = Math.floor(difrence_second / (24 * 60 * 60));
+
+                document.getElementById('seconds').innerHTML = seconds;
+                document.getElementById('minutes').innerHTML = minutes;
+                document.getElementById('hours').innerHTML = hours;
+                document.getElementById('days').innerHTML = days;
+
+                setTimeout(function() {
+                    countdown();
+                }, 1000);
+            }
+        </script>
+
+    </head>
+    <body onload="countdown()">
+        <div id="counter">
+            count down with JavaScript:<br>
+            <span id="days"></span> : <span id="hours"></span> : <span id="minutes"></span> : <span id="seconds">10</span>
+        </div>
+    </body>
+</html>
