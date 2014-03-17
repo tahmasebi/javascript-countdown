@@ -14,24 +14,25 @@
             function countdown() {
                 var now = new Date();
                 var difrence = target_date.getTime() - now.getTime();
-                var difrence_second = difrence / 1000;
+                var difrence_second = difrence / 1000; // difrence between to target date and now in seconds
 
-                var seconds = Math.floor(difrence_second % 60);
-                var minutes = Math.floor((difrence_second / 60) % 60);
-                var hours = Math.floor((difrence_second / (60 * 60)) % 24);
-                var days = Math.floor(difrence_second / (24 * 60 * 60));
-
+                var seconds = Math.floor(difrence_second % 60); // remaining seconds between 0 to 59
+                var minutes = Math.floor((difrence_second / 60) % 60); // remaining minutes between 0 to 59
+                var hours = Math.floor((difrence_second / (60 * 60)) % 24); // remaining hours between 0 to 24
+                var days = Math.floor(difrence_second / (24 * 60 * 60)); 
+                
+                // write each remainings in related html elements 
                 document.getElementById('seconds').innerHTML = seconds;
                 document.getElementById('minutes').innerHTML = minutes;
                 document.getElementById('hours').innerHTML = hours;
                 document.getElementById('days').innerHTML = days;
-
+                
+                // repeat this function each 1 second for display counter as live
                 setTimeout(function() {
                     countdown();
                 }, 1000);
             }
         </script>
-
     </head>
     <body onload="countdown()">
         <div id="counter">
